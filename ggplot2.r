@@ -70,3 +70,15 @@ p + geom_line(aes(color = diamonds$color))
 ggplot(diamonds,aes(y=diamonds$carat,x=diamonds$price,ymin=6.5, ymax=3.6,
                     color=diamonds$color))+
   geom_crossbar()
+
+
+# scaling
+p3 <- ggplot(diamonds,
+             aes(y = diamonds$depth,
+                 x = diamonds$cut)) + 
+  theme(legend.position="top",
+        axis.text=element_text(size = 6))
+(p4 <- p3 + geom_point(aes(color = diamonds$color),
+                       alpha = 0.25,
+                       size = 1.5,
+                       position = position_jitter(width = 0.05, height = 17)))
