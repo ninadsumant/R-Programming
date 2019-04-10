@@ -23,17 +23,50 @@ ggplot(data, aes(x=data$carat, y=data$color)) +
   geom_point() +
   geom_point(data = data, aes(y = data$clarity), colour = 'red', size = 3)
 
+#Scatter plot
+
 ggplot(diamonds,aes(x=diamonds$carat,y=diamonds$price,
            color=diamonds$color))+
   geom_point()
 
+
+#histogram
 
 library(ggplot2)
 ggplot(diamonds, aes(x = diamonds$price,color=diamonds$color)) +
   geom_histogram()
 
 
+#bar plot
 
 library(ggplot2)
 ggplot(diamonds, aes(x = diamonds$price,color=diamonds$color, size = 2)) +
   geom_bar()
+
+
+#bar plot
+
+ggplot(diamonds,aes(x=diamonds$carat,y=diamonds$price,
+                    color=diamonds$color))+
+  geom_line()
+
+
+#boxplot
+
+ggplot(diamonds,aes(x=diamonds$carat,y=diamonds$price,
+                    color=diamonds$color))+
+  geom_boxplot()
+
+
+#line graph
+
+p <- ggplot(diamonds, aes(x = diamonds$carat, y = diamonds$price))
+p + geom_line(aes(color = diamonds$color)) 
+
+
+#cross bar
+
+
+ggplot(diamonds,aes(y=diamonds$carat,x=diamonds$price,ymin=6.5, ymax=3.6,
+                    color=diamonds$color))+
+  geom_crossbar()
