@@ -1,0 +1,18 @@
+Twistter=c("She","sells","by","the","sea","shore","the","shells","she","sells","are","surely","sea","shells","if" ,"she" ,"sells","shell" ,"on","shore","i" ,"am","sure" ,"she" ,"sells" ,"sea","shore" ,"shells")
+st=sort(nchar(Twistter))
+st=unique(st)
+st
+for(i in 1:length(st))
+{
+
+  print("words of length ")
+  print(st[i])
+  for(j in 1:length(Twistter))
+  {
+
+    if(nchar(Twistter[j])==st[i])
+    {
+      print(Twistter[j])
+    }
+  }
+}
